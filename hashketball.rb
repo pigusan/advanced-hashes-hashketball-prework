@@ -140,10 +140,8 @@ end
 
 def team_names
   new_array = []
-  game_hash.each do |keys, values|
-    values.each do |data_labels, data|
-      if data_labels == :team_name
-        new_array << data
+  game_hash.each do |home_away, team_data_hash|
+      new_array << team_data_hash[:team_names]
       end
     end
   end
