@@ -165,7 +165,7 @@ def player_numbers(team)
       end
     end
   end
-  new_array
+  player_numbers
 end
 
 =begin def player_stats(name)
