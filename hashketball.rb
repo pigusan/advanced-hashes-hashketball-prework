@@ -168,7 +168,7 @@ def player_numbers(team)
   new_array
 end
 
-def player_stats(name)
+=begin def player_stats(name)
   player_stats = nil
   game_hash.each do |home_away, team_info|
     team_info.each do |data_label, data|
@@ -182,6 +182,17 @@ def player_stats(name)
     end
   end
   player_stats
+end
+
+=end 
+
+def player_stats(player)
+  game_hash.each do
+    |location, teamStatsHash|
+    if teamStatsHash[:players].include?(player)
+      return teamStatsHash[:players][player]
+    end
+  end
 end
 
 def big_shoe_rebounds
