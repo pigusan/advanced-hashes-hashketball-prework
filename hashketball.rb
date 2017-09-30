@@ -184,7 +184,7 @@ end
   player_stats
 end
 
-=end 
+=end
 
 def player_stats(player)
   game_hash.each do
