@@ -160,7 +160,7 @@ def player_numbers(team)
     game_hash[:away][:players].each do |name, stats|
       stats.each do |stat_label, stat_value|
         if stat_label == :number
-          new_array << stat_value
+          player_numbers << stat_value
         end
       end
     end
