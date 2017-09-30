@@ -147,12 +147,12 @@ def team_names
 end
 
 def player_numbers(team)
-  new_array = []
+  player_numbers = []
   if game_hash[:home][:team_name] == team
     game_hash[:home][:players].each do |name, stats|
       stats.each do |stat_label, stat_value|
         if stat_label == :number
-          new_array << stat_value
+          player_numbers << stat_value
         end
       end
     end
