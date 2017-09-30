@@ -188,9 +188,9 @@ end
 
 def player_stats(player)
   game_hash.each do
-    |location, teamStatsHash|
-    if teamStatsHash[:players].include?(player)
-      return teamStatsHash[:players][player]
+    |home_or_away, team_data|
+    if team_data[:players].include?(player)
+      return team_data[:players][player]
     end
   end
 end
