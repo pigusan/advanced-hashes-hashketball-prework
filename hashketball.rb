@@ -119,27 +119,23 @@ def game_hash
 end
 
 def num_points_scored(player_name)
-  game_hash.collect do |team, team_data|
+  game_hash.collect do |team, team_data| #each can be swapped
     return team_data[:players][player_name][:points] if team_data[:players].include?(player_name)
   end
 end
 
-def shoe_size(player_name)
+def shoe_size(player_name) #each can be swapped
   game_hash.collect do |team, team_data|
     return team_data[:players][player_name][:shoe] if team_data[:players].include?(player_name)
   end
 end
 
 def team_colors(team)
-  new_array = []
-  game_hash.each do |keys, values|
-    values.each do |data_labels, data|
-      if data == team
-        new_array << game_hash[keys][:colors]
-      end
+  game_hash.each do |team, team_data_hash|
+    if team_data_hash[:team_name] == team
+      return team_data_hash[:colors]
     end
   end
-  new_array.flatten
 end
 
 def team_names
